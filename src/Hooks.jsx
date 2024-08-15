@@ -4,7 +4,6 @@ const Hooks = () => {
   const [data, setData] = useState({
     countone: 0,
     counttwo: 0,
-    countthree: 0,
   });
 
   const puls = (prop) => {
