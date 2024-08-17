@@ -3,7 +3,14 @@ import { React, useState, useReducer } from "react";
 export default function Reducer() {
   const [option, setOption] = useState(1);
   let [count, dispatch] = useReducer((state, action) => {
-    return state + action.payload;
+    switch (action.type) {
+      case "plus":
+        return state + action.payload;
+      case "minus":
+        return state - action.payload;
+      default:
+        break;
+    }
   }, 0);
 
   const onSelect = (evt) => {
@@ -27,10 +34,16 @@ export default function Reducer() {
             <option value="3">3</option>
           </select>
           <button
-            onClick={() => dispatch({ payload: option })}
+            onClick={() => dispatch({ type: "plus", payload: option })}
             className="ml-3 p-1 px-3 border border-zinc-400 rounded-md"
           >
-            Click {option}
+            Click +{option}
+          </button>
+          <button
+            onClick={() => dispatch({ type: "minus", payload: option })}
+            className="ml-3 p-1 px-3 border border-zinc-400 rounded-md"
+          >
+            Click -{option}
           </button>
         </div>
       </div>
