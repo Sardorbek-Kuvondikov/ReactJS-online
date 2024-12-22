@@ -1,6 +1,6 @@
-# Lesson-1 
+# 📘 Lesson-1 
 React ga kirish
-## Reja:
+## 🌍 Reja:
 - npx create-react-app
 - package.json, src, public
 - single page application
